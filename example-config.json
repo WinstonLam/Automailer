@@ -1,0 +1,13 @@
+{
+    "contacts":
+    [
+        {
+            "name": "John Doe",
+            "email": "John@hotmail.com"
+        }
+    ],
+    "host": {
+        "email": "lisadoe@hotmail.com",
+        "passw": "password1234"
+      }
+}
