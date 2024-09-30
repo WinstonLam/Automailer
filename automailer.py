@@ -7,9 +7,12 @@ from email.mime.text import MIMEText
 from email import encoders
 
 # configure the subject of the email
-month = "05"
-year = "2023"
-subject = f"Originals Urenregistratie {month}-{year}"
+month = "08"
+year = "2024"
+
+# choose subject line:
+subject = f"Originals Salarisspecificatie {month}-{year}"
+# subject = f"Originals Urenoverzicht {month}-{year}"
 
 # read the config file
 with open('config.json', 'r') as f:
@@ -30,6 +33,7 @@ smtp_port = 587
 server = smtplib.SMTP(smtp_server, smtp_port)
 server.starttls()
 server.login(host['email'], host['passw'])
+
 
 # loop through each person and email in the config
 for pdf, person in config.items():
@@ -65,7 +69,6 @@ for pdf, person in config.items():
     # remove the file from the directory
     os.remove(pdf_path)
     print(f"Removed {pdf_path}\n")
-
 
 # close the connection to the server
 server.quit()
